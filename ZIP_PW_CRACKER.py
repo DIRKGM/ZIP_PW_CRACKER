@@ -1,7 +1,7 @@
 ##############################################################################
 #                                                                            #                           
 #                          ZIP Password Cracker                              #
-#                               DGM                                          #
+#                                                                            #
 #                                                                            #
 ##############################################################################
 import zipfile
@@ -13,14 +13,13 @@ import traceback
 def crack(zip, pwd):
     try:
         zip.extractall(pwd=str.encode(pwd))
-        print('Sucesess: Paswword is' + pwd)
+        print('Sucesess: Paswword is:' + pwd)
     except:
-        if pwd == "abc":
-            traceback.print_exc()
-
-zipfile=zipfile.ZipFile("ZipFile Path") 
-myletters = string.ascii_letters + string.digits + string.punctuation
-for i in range (3,10)
-    for j in map(''.join, itertolls.product(AB´, repeat=3)):
+        pass
+        
+zipfile=zipfile.ZipFile("ZipFile Path") <--Zipfile Pfad eintragen-->
+myletters = string.ascii_letters + string.digits + string.punctuation <-- Buchstaben, Zahlen, Sonderzeichen-->
+for i in range (1,10) <--Password Länge-->
+    for j in map(''.join, itertolls.product(myletters, repeat=i)):
         t=Thread(target=crack, args=(zipfile, j))
         t.start()
